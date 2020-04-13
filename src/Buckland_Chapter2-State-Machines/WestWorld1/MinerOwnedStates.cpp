@@ -9,7 +9,6 @@
 using std::cout;
 
 //define this to output to a file
-#define TEXTOUTPUT
 #ifdef TEXTOUTPUT
 #include <fstream>
 extern std::ofstream os;
