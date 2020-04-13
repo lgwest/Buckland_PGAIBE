@@ -1,29 +1,14 @@
-//include the libraries
-#pragma comment(lib, "lua5.1.lib")
-#pragma comment(lib, "luabind.lib")
-//#pragma comment(lib, "lua.lib")
-//#pragma comment(lib, "lualib.lib")
-
 //turn off the inevitable warnings
 #pragma warning (disable : 4786)
 
-extern "C"
-{
-  #include <lua.h>
-  #include <lualib.h>
-  #include <lauxlib.h>
-}
-
+#include "lua.hpp"
 #include <iostream>
+
 using namespace std;
 
-//include the luabind headers. Make sure you have the paths set correctly
-//to the lua, luabind and Boost files.
-#include <luabind/luabind.hpp>
-using namespace luabind;
 
 //include the helper functions
-#include "LuaHelperFunctions.h"
+#include "luahelper/LuaHelperFunctions.h"
 
 
 //define a couple of simple functions
@@ -42,26 +27,26 @@ int add(int a, int b)
 int main()
 {
   //create a lua state
-  lua_State* pLua = lua_open();
+  lua_State* L = luaL_newstate();
 
   //open the lua libaries - new in lua5.1
-  luaL_openlibs(pLua);
+  luaL_openlibs(L);
 
   //open luabind
-  open(pLua);
+  open(L);
 
-  module(pLua)
+  module(L)
   [
 	  def("HelloWorld", &HelloWorld),
     def("add", &add)
   ];
  
   //load and run the script
-  RunLuaScript(pLua, "ExposingCPPFunctionsToLua.lua");
+  RunLuaScript(L, "ExposingCPPFunctionsToLua.lua");
 
   
   //tidy up
-  lua_close(pLua);
+  lua_close(L);
 
     
   return 0;

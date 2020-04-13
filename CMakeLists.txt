@@ -18,4 +18,5 @@ add_subdirectory(src/Buckland_Chapter5-Pathfinder)
 add_subdirectory(src/Buckland_Chapter6-Scripting-Source/StartHere)
 add_subdirectory(src/Buckland_Chapter6-Scripting-Source/cpp_using_lua)
 add_subdirectory(src/Buckland_Chapter6-Scripting-Source/lua_using_cpp)
+add_subdirectory(src/Buckland_Chapter6-Scripting-Source/ExposingCPPFunctionsToLua)
 
