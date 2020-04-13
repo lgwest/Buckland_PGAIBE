@@ -13,4 +13,5 @@ add_subdirectory(src/Buckland_Chapter2-State-Machines/WestWorldWithWoman)
 add_subdirectory(src/Buckland_Chapter2-State-Machines/WestWorldWithMessaging)
 add_subdirectory(src/Buckland_Chapter3-Steering-Behaviors)
 add_subdirectory(src/Buckland_Chapter4-SimpleSoccer)
+add_subdirectory(src/Buckland_Chapter5-Pathfinder)
 
