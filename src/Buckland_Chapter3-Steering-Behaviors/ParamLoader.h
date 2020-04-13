@@ -11,7 +11,7 @@
 #include "constants.h"
 #include "misc/iniFileLoaderBase.h"
 #include "misc/utils.h"
-
+#include "params_ini_dir.h"
 
 
 #define Prm (*ParamLoader::Instance())
@@ -21,7 +21,7 @@ class ParamLoader : public iniFileLoaderBase
 {
 private:
   
-    ParamLoader():iniFileLoaderBase("params.ini")
+    ParamLoader():iniFileLoaderBase(PARAMS_INI_DIR"params.ini")
   {
     NumAgents               = GetNextParameterInt();
     NumObstacles            = GetNextParameterInt();
