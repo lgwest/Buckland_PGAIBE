@@ -1,4 +1,4 @@
-project(WestWorldWitMessaging)
+project(2-3-WestWorldWitMessaging)
 
 set(SOURCE
 BaseGameEntity.cpp

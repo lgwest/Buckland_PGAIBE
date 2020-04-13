@@ -1,4 +1,4 @@
-project(SteeringBehaviors)
+project(3-SteeringBehaviors)
 
 set(SOURCE
 BaseGameEntity.h

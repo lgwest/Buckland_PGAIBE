@@ -1,4 +1,4 @@
-project(SimpleSocker)
+project(4-SimpleSocker)
 
 set(SOURCE 
 constants.h

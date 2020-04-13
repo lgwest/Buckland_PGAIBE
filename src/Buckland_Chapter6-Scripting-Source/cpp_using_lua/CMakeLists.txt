@@ -1,4 +1,4 @@
-project(6-1-StartHere)
+project(6-2-cpp_using_lua)
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/this_dir.h.in ${CMAKE_CURRENT_SOURCE_DIR}/this_dir.h)
 

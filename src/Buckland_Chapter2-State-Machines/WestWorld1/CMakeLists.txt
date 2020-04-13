@@ -1,4 +1,5 @@
-project(WestWorld1)
+project(2-1-WestWorld1)
+
 set(SOURCE
 BaseGameEntity.cpp
 BaseGameEntity.h
@@ -11,4 +12,4 @@ MinerOwnedStates.cpp
 MinerOwnedStates.h
 State.h
 )
-add_executable(westworld1 ${SOURCE})
+add_executable(${PROJECT_NAME} ${SOURCE})

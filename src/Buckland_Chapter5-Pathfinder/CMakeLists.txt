@@ -1,4 +1,4 @@
-project(PathFinder)
+project(5-PathFinder)
 
 set(SOURCE
 constants.h

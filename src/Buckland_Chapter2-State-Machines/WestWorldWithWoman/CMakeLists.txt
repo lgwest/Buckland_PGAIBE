@@ -1,4 +1,4 @@
-project(WestWorldWithWoman)
+project(2-2-WestWorldWithWoman)
 
 set(SOURCE
 BaseGameEntity.cpp
