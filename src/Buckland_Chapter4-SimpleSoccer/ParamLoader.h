@@ -19,6 +19,7 @@
 #include "constants.h"
 #include "misc/iniFileLoaderBase.h"
 
+#include "params_ini_dir.h"
 
 #define Prm (*ParamLoader::Instance())
 
@@ -26,7 +27,7 @@ class ParamLoader : public iniFileLoaderBase
 {
 private:
 
-  ParamLoader():iniFileLoaderBase("Params.ini")
+  ParamLoader():iniFileLoaderBase(PARAMS_INI_DIR "Params.ini")
   {    
        
     GoalWidth                   = GetNextParameterDouble(); 
