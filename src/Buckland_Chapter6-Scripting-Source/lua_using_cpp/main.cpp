@@ -1,40 +1,30 @@
-extern "C"
-{
-  #include <lua.h>
-  #include <lualib.h>
-  #include <lauxlib.h>
-}
-
-#pragma comment(lib, "lua5.1.lib")
-//#pragma comment(lib, "lualib.lib")
-
 #include <iostream>
 #include <string>
-using namespace std;
-
-#include "LuaHelperFunctions.h"
+#include "lua.hpp"
+#include "luahelper/LuaHelperFunctions.h"
 #include "RockPaperScissors.h"
 
+#include "this_dir.h"
 
-
+using namespace std;
 
 int main()
 {
   //create a lua state
-  lua_State* pL = lua_open();
+  lua_State* L = luaL_newstate();
 
   //open the lua libaries - new in lua5.1
-  luaL_openlibs(pL);
+  luaL_openlibs(L);
 
   //register the functions with lua
-  lua_register(pL, "cpp_GetAIMove", cpp_GetAIMove);
-  lua_register(pL, "cpp_EvaluateTheGuesses", cpp_EvaluateTheGuesses);
+  lua_register(L, "cpp_GetAIMove", cpp_GetAIMove);
+  lua_register(L, "cpp_EvaluateTheGuesses", cpp_EvaluateTheGuesses);
 
   //run the script
-  RunLuaScript(pL, "Rock_Paper_Scissors_Using_C++_Funcs.lua");
+  RunLuaScript(L, THIS_DIR "Rock_Paper_Scissors_Using_C++_Funcs.lua");
   
   //tidy up
-  lua_close(pL);
+  lua_close(L);
 
   cout << "\n\n\n";
     

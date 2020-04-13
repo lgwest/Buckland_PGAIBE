@@ -2,7 +2,7 @@
 #define ROCK_PAPER_SCISSORS_H
 #pragma warning (disable:4786)
 
-#include "OpenLuaStates.h"
+#include "lua.hpp"
 #include "misc/utils.h"
 #include <string>
 #include <iostream>
