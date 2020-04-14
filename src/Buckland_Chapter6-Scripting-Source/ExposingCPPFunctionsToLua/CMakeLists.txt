@@ -7,6 +7,6 @@ ExposingCPPFunctionsToLua.lua
 main.cpp 
 )
 
-add_executable(${PROJECT_NAME} ${SOURCE})
+add_executable(${PROJECT_NAME} ${SOURCE} ../notes.md)
 target_link_libraries(${PROJECT_NAME} lua-5.3.5)
 
