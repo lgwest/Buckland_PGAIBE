@@ -1,4 +1,5 @@
-# Some search results
+# What to use for the lua-c++ bindings?
+## Some search results
 - https://gamedev.stackexchange.com/questions/7829/what-is-the-recommended-library-for-using-lua-from-c
 - https://stackoverflow.com/questions/19381301/how-to-expose-c-functions-to-a-lua-script
 - https://github.com/vinniefalco/LuaBridge
