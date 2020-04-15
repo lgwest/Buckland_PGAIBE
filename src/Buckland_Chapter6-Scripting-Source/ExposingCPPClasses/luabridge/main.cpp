@@ -25,9 +25,9 @@ void RegisterAnimalWithLua(lua_State* L)
 void RegisterPetWithLua(lua_State* L)
 {
     luabridge::getGlobalNamespace(L)
-        .deriveClass<Pet, Animal>("B")
+        .deriveClass<Pet, Animal>("Pet")
 	        .addConstructor<void(*) (std::string, std::string, int)>()
-	        .addFunction("getName", &Pet::GetName)
+	        .addFunction("GetName", &Pet::GetName)
         .endClass();
   //module(L)
   //  [
