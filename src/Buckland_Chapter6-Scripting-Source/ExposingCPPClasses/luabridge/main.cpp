@@ -1,78 +1,55 @@
-//include the libraries
-#pragma comment(lib, "lua5.1.lib")
-#pragma comment(lib, "luabind.lib")
-//#pragma comment(lib, "lua.lib")
-//#pragma comment(lib, "lualib.lib")
-#pragma warning (disable : 4786)
-
-extern "C"
-{
-  #include <lua.h>
-  #include <lualib.h>
-  #include <lauxlib.h>
-}
-
+#include "lua.hpp"
 #include <string>
 #include <iostream>
 using namespace std;
 
-//include the luabind headers. Make sure you have the paths set correctly
-//to the lua, luabind and Boost files.
-#include <luabind/luabind.hpp>
-using namespace luabind;
 
-#include "LuaHelperFunctions.h"
+#include "LuaHelper/LuaHelperFunctions.h"
 #include "Animal.h"
 #include "Pet.h"
 
 
 
 
-void RegisterAnimalWithLua(lua_State* pLua)
+void RegisterAnimalWithLua(lua_State* L)
 {
-  module(pLua)
-  [
-    class_<Animal>("Animal")
-    .def(constructor<string, int>())
-    .def("Speak", &Animal::Speak)
-    .def("NumLegs", &Animal::NumLegs)   
-  ];  
+  //module(L)
+  //[
+  //  class_<Animal>("Animal")
+  //  .def(constructor<string, int>())
+  //  .def("Speak", &Animal::Speak)
+  //  .def("NumLegs", &Animal::NumLegs)   
+  //];  
 }
 
-void RegisterPetWithLua(lua_State* pLua)
+void RegisterPetWithLua(lua_State* L)
 {
-  module(pLua)
-    [
-      class_<Pet, bases<Animal> >("Pet")
-      .def(constructor<string, string, int>())
-      .def("GetName", &Pet::GetName)  
-    
-    ];  
+  //module(L)
+  //  [
+  //    class_<Pet, bases<Animal> >("Pet")
+  //    .def(constructor<string, string, int>())
+  //    .def("GetName", &Pet::GetName)  
+  //  
+  //  ];  
 }
 
 
 int main()
 {
   //create a lua state
-  lua_State* pLua = lua_open();
+  lua_State* L = luaL_newstate();
 
   //open the lua libaries - new in lua5.1
-  luaL_openlibs(pLua);
+  luaL_openlibs(L);
 
-  //open luabind
-  open(pLua);
-
-  RegisterAnimalWithLua(pLua);
-  RegisterPetWithLua(pLua);
+  RegisterAnimalWithLua(L);
+  RegisterPetWithLua(L);
  
   //load and run the script
-  RunLuaScript(pLua, "ExposingCPPClassesToLua.lua");
+  RunLuaScript(L, "ExposingCPPClassesToLua.lua");
 
-  lua_close(pLua);
+  lua_close(L);
 
-
-
-  
     
   return 0;
 }
