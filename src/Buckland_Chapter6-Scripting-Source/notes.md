@@ -8,6 +8,8 @@
 - https://www.lua.org/wshop14/Zykov.pdf
 - https://github.com/jeremyong/Selene
 - https://stackoverflow.com/questions/52564364/automated-lua-binding-using-c
+- https://eliasdaler.wordpress.com/2014/07/18/using-lua-with-cpp-luabridge/
+- https://github.com/shybovycha/lua-bridge-sample
 
 ## Conclusion
 I try to use [LuaBridge](https://github.com/vinniefalco/LuaBridge) instead of  [LuaBind](https://github.com/luabind/luabind/tree/master/luabind) because it is a stansalone header only library
