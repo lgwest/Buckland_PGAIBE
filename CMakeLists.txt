@@ -24,4 +24,8 @@ add_subdirectory(src/Buckland_Chapter6-Scripting-Source/ExposingCPPFunctionsToLu
 #add_subdirectory(src/Buckland_Chapter6-Scripting-Source/ExposingCPPClasses/luabind)
 add_subdirectory(src/Buckland_Chapter6-Scripting-Source/ExposingCPPClasses/luabridge)
 #add_subdirectory(src/Buckland_Chapter6-Scripting-Source/ExposingCPPClasses/luacpp11)
+#add_subdirectory(src/Buckland_Chapter6-Scripting-Source/CreatingClasses/luabind)
+add_subdirectory(src/Buckland_Chapter6-Scripting-Source/CreatingClasses/luabridge)
+#add_subdirectory(src/Buckland_Chapter6-Scripting-Source/CreatingClasses/luacpp11)
+add_subdirectory(src/Buckland_Chapter7_to_10-Raven/)
 
