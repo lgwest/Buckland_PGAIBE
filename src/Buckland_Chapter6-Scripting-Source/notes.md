@@ -10,6 +10,7 @@
 - https://stackoverflow.com/questions/52564364/automated-lua-binding-using-c
 - https://eliasdaler.wordpress.com/2014/07/18/using-lua-with-cpp-luabridge/
 - https://github.com/shybovycha/lua-bridge-sample
+- https://eliasdaler.wordpress.com/2014/11/01/using-lua-with-c-luabridge-part-2-using-scripts-for-object-behaviour/
 
 ## Conclusion
 I try to use [LuaBridge](https://github.com/vinniefalco/LuaBridge) instead of  [LuaBind](https://github.com/luabind/luabind/tree/master/luabind) because it is a stansalone header only library

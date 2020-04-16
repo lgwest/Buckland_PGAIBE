@@ -2,13 +2,13 @@
 #define GOAL_MOVE_TO_ITEM_H
 #pragma warning (disable:4786)
 
-#include "Raven_Goal.h"
+#include "Raven_Goal_Types.h"
 
 
 class Raven_Bot;
 
 
-class Goal_MoveToItem : public Raven_Goal
+class Goal_MoveToItem : public Raven_Goal_Types
 {
 private:
 
@@ -17,7 +17,7 @@ private:
 public:
 
   Goal_MoveToItem(Raven_Bot* pBot,
-               int        type):Raven_Goal(pBot, goal_explore),
+               int        type):Raven_Goal_Types(pBot, goal_explore),
                                 m_iItemType(type)
   {}
 

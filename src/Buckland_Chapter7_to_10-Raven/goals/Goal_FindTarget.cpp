@@ -1,6 +1,6 @@
 #include "Goal_Wander.h"
-#include "..\Raven_Bot.h"
-#include "..\Raven_SteeringBehaviors.h"
+#include "../Raven_Bot.h"
+#include "../Raven_SteeringBehaviors.h"
 
 
 
@@ -17,13 +17,13 @@ void Goal_Wander::Activate()
 //-----------------------------------------------------------------------------
 int Goal_Wander::Process()
 {
-  if (m_Status == inactive)
+  if (m_iStatus == inactive)
   {
     Activate();
-    m_Status = active;
+    m_iStatus = active;
   }
 
-  return m_Status;
+  return m_iStatus;
 }
 
 //---------------------------- Terminate --------------------------------------
@@ -32,6 +32,6 @@ void Goal_Wander::Terminate()
 {
   m_pOwner->GetSteering()->WanderOff();
 
-  m_Status = completed;
+  m_iStatus = completed;
 }
 
