@@ -1,4 +1,4 @@
-project(6-4-ExposeCPPClasses-luabridge)
+project(6-4-2-ExposeCPPClasses-luabridge)
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/this_dir.h.in ${CMAKE_CURRENT_SOURCE_DIR}/this_dir.h)
 
