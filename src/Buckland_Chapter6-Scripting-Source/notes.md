@@ -11,9 +11,14 @@
 - https://eliasdaler.wordpress.com/2014/07/18/using-lua-with-cpp-luabridge/
 - https://github.com/shybovycha/lua-bridge-sample
 - https://eliasdaler.wordpress.com/2014/11/01/using-lua-with-c-luabridge-part-2-using-scripts-for-object-behaviour/
+- https://github.com/ThePhD/sol2
+- https://sol2.readthedocs.io/en/latest/
+- https://sol2.readthedocs.io/en/latest/tutorial/cxx-in-lua.html
 
 ## Conclusion
 I try to use [LuaBridge](https://github.com/vinniefalco/LuaBridge) instead of  [LuaBind](https://github.com/luabind/luabind/tree/master/luabind) because it is a stansalone header only library
 and LuaBind seems to depend on [boost](https://www.boost.org/) which can be a bit cumbersome to install.
 
-Another interesting alternative is [luacpp11](https://github.com/progschj/luacpp11)
+Also check [Sol](https://github.com/ThePhD/sol2)
+
+Another interesting alternative is [luacpp11](https://github.com/progschj/luacpp11), maybe to low-level?
