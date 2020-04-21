@@ -5,25 +5,30 @@ using namespace std;
 
 
 #include "LuaHelper/LuaHelperFunctions.h"
+#include "luabridge/LuaBridge.h"
 #include "Animal.h"
 #include "Pet.h"
 
-
+#include "this_dir.h"
 
 
 void RegisterAnimalWithLua(lua_State* L)
 {
-  //module(L)
-  //[
-  //  class_<Animal>("Animal")
-  //  .def(constructor<string, int>())
-  //  .def("Speak", &Animal::Speak)
-  //  .def("NumLegs", &Animal::NumLegs)   
-  //];  
+    luabridge::getGlobalNamespace(L)
+        .beginClass<Animal>("Animal")
+	        .addConstructor<void(*) (std::string, int)>()
+	        .addFunction("Speak", &Animal::Speak)
+			.addFunction("NumLegs", &Animal::NumLegs)
+        .endClass();
 }
 
 void RegisterPetWithLua(lua_State* L)
 {
+    luabridge::getGlobalNamespace(L)
+        .deriveClass<Pet, Animal>("Pet")
+	        .addConstructor<void(*) (std::string, std::string, int)>()
+	        .addFunction("GetName", &Pet::GetName)
+        .endClass();
   //module(L)
   //  [
   //    class_<Pet, bases<Animal> >("Pet")
@@ -46,7 +51,7 @@ int main()
   RegisterPetWithLua(L);
  
   //load and run the script
-  RunLuaScript(L, "ExposingCPPClassesToLua.lua");
+  RunLuaScript(L, THIS_DIR"ExposingCPPClassesToLua.lua");
 
   lua_close(L);
 
