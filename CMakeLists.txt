@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 
+project(Buckland_PGAIBE)
+
 include_directories(${CMAKE_SOURCE_DIR}/src/Common)
 
 add_subdirectory(src/Common/Time)
